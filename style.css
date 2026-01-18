@@ -41,3 +41,10 @@ button:hover {
   font-size: 96px;
   color: black; 
 }
+
+/*Style p within container */ 
+.container p{
+  font-family: Times New Roman; 
+  font-size: 24px;
+  color: black;
+}
