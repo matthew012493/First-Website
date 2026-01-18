@@ -37,6 +37,6 @@ button:hover {
 
 /*Style h1 within container */
 .container h1{
-  font-family: Georgia;
-  font-size: 100px;
+  font-family: Georgia !important;
+  font-size: 100px !important;
 }
