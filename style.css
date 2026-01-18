@@ -1,0 +1,36 @@
+/* Make the page take full height and remove default margins */
+body {
+  height: 100vh;            /* full viewport height */
+  margin: 0;                 /* remove default spacing */
+  display: flex;             /* enable flexbox layout */
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically */
+  background-color: #f0f0f0; /* light background */
+  font-family: Arial, sans-serif; /* nicer font */
+}
+
+/* Center text inside the container */
+.container {
+  text-align: center;
+}
+
+/* Space elements vertically */
+.container > * {
+  margin: 10px 0; /* 10px above and below each child */
+}
+
+/* Style the button */
+button {
+  font-size: 18px;
+  padding: 12px 24px;
+  background-color: #4CAF50; /* green */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #45a049;
+}
