@@ -5,7 +5,7 @@ body {
   display: flex;             /* enable flexbox layout */
   justify-content: center;   /* center horizontally */
   align-items: center;       /* center vertically */
-  background-color: hotpink; /* light background */
+  background-color: #e6d9ff; /* purple background */
   font-family: Arial, sans-serif; /* nicer font */
 }
 
