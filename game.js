@@ -25,6 +25,14 @@ function newQuestion() {
   feedback.textContent = "";
 }
 
+// End game function
+function endGame() {
+  questionEl.textContent = "⏰ Time's up!";
+  answerInput.style.display = "none";
+  submitBtn.style.display = "none";
+  feedback.textContent = "";
+}
+
 // Timer function
 function startTimer() {
   const timerInterval = setInterval(() => {
