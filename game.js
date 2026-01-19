@@ -25,6 +25,7 @@ function newQuestion() {
   feedback.textContent = "";
 }
 
+// Timer function
 function startTimer() {
   const timerInterval = setInterval(() => {
     timerEl.textContent = `Time: ${timeLeft}`;
