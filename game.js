@@ -1,3 +1,6 @@
+let timeLeft = 60; // seconds
+
+const timerEl = document.getElementById("timer");
 const questionEl = document.getElementById("question");
 const answerInput = document.getElementById("answer");
 const submitBtn = document.getElementById("submit");
@@ -22,6 +25,18 @@ function newQuestion() {
   feedback.textContent = "";
 }
 
+function startTimer() {
+  const timerInterval = setInterval(() => {
+    timerEl.textContent = `Time: ${timeLeft}`;
+    timeLeft--;
+
+    if (timeLeft < 0) {
+      clearInterval(timerInterval);
+      endGame();
+    }
+  }, 1000);
+}
+
 // Check the answer
 submitBtn.addEventListener("click", () => {
   if (answerInput.value.trim() === correctAnswer.toString()) {
@@ -41,3 +56,4 @@ answerInput.addEventListener("keypress", (e) => {
 
 // Start the game
 newQuestion();
+startTimer();
