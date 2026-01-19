@@ -48,3 +48,13 @@ button:hover {
   font-size: 24px;
   color: black;
 }
+
+/*Style timer in game html */
+#timer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
