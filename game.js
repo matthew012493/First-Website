@@ -25,12 +25,12 @@ function newQuestion() {
 // Check the answer
 submitBtn.addEventListener("click", () => {
   if (answerInput.value.trim() === correctAnswer.toString()) {
-    feedback.textContent = "✅ Correct!";
-    feedback.style.color = "green";
-    setTimeout(newQuestion, 800);
+    newQuestion(); // immediately go to next question
   } else {
     feedback.textContent = "❌ Try again!";
     feedback.style.color = "red";
+    answerInput.value = "";   // clear wrong answer
+    answerInput.focus();      // cursor stays ready
   }
 });
 
