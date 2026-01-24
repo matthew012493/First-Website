@@ -1,6 +1,6 @@
-let timeLeft = 60; // seconds
+let timeLeft = 120; // seconds
 let score = 0; // initialize score
-let timerInterval; //
+let timerInterval; 
 
 const timerEl = document.getElementById("timer");
 const scoreEl = document.getElementById("score");
