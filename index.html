@@ -9,7 +9,30 @@
   <div class="container">
     <h1>🏁 Math Racer 🏁</h1>
     <p>Race against the clock and answer questions as fast as you can!</p>
-    <button onclick="location.href='game.html'">Start Game</button>
+
+    <label>
+      Difficulty:
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </label>
+
+    <button id="startBtn">Start Game</button>
   </div>
+
+  <script>
+    const startBtn = document.getElementById("startBtn");
+    startBtn.addEventListener("click", () => {
+      const difficulty = document.getElementById("difficulty").value;
+
+      // Allows game.html to access difficulty level
+      localStorage.setItem("difficulty", difficulty);
+
+      // Go to game page
+      location.href = "game.html";
+    });
+  </script>
 </body>
 </html>
