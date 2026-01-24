@@ -1,10 +1,14 @@
 let timeLeft = 60; // seconds
+let score = 0; // initialize score
+let timerInterval; //
 
 const timerEl = document.getElementById("timer");
+const scoreEl = document.getElementById("score");
 const questionEl = document.getElementById("question");
 const answerInput = document.getElementById("answer");
 const submitBtn = document.getElementById("submit");
 const feedback = document.getElementById("feedback");
+const restartBtn = document.getElementById("restart");
 
 let num1, num2, correctAnswer;
 
@@ -27,10 +31,15 @@ function newQuestion() {
 
 // End game function
 function endGame() {
+  clearInterval(timerInterval); 
+  
   questionEl.textContent = "⏰ Time's up!";
+  feedback.textContent = "Final Score: ${score}";
+  feedback.style.color = "black"
+  
   answerInput.style.display = "none";
   submitBtn.style.display = "none";
-  feedback.textContent = "";
+  restartBtn.style.display = "inline-block";
 }
 
 // Timer function
@@ -49,7 +58,10 @@ function startTimer() {
 // Check the answer
 submitBtn.addEventListener("click", () => {
   if (answerInput.value.trim() === correctAnswer.toString()) {
+    score++; // Updates score if correct
+    scoreEl.textContent = `Score: ${score}`;
     newQuestion(); // immediately go to next question
+    
   } else {
     feedback.textContent = "❌ Try again!";
     feedback.style.color = "red";
@@ -61,6 +73,22 @@ submitBtn.addEventListener("click", () => {
 // Allow Enter key
 answerInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") submitBtn.click();
+});
+
+// Restart game
+restartBtn.addEventListener("click", () => {
+  timeLeft = 60;
+  score = 0;
+
+  scoreEl.textContent = "Score: 0";
+  timerEl.textContent = "Time: 60";
+
+  answerInput.style.display = "inline-block";
+  submitBtn.style.display = "inline-block";
+  restartBtn.style.display = "none";
+
+  newQuestion();
+  startTimer();
 });
 
 // Start the game
