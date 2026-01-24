@@ -1,6 +1,7 @@
 let timeLeft = 120; // seconds
 let score = 0; // initialize score
 let timerInterval; 
+let difficulty = localStorage.getItem("difficulty") || "easy"; // Gets difficulty 
 
 const timerEl = document.getElementById("timer");
 const scoreEl = document.getElementById("score");
@@ -19,11 +20,27 @@ function randomNumber(min, max) {
 
 // Create a new question
 function newQuestion() {
+  let maxNumber;
+
+  switch (difficulty) {
+    case "easy":
+      maxNumber = 9;
+      break;
+    case "medium":
+      maxNumber = 99;
+      break;
+    case "hard":
+      maxNumber = 999;
+      break;
+    default:
+      maxNumber = 9;
+  }
+  
   num1 = randomNumber(1, 10);
   num2 = randomNumber(1, 10);
   correctAnswer = num1 + num2;
 
-  questionEl.textContent = `${num1} + ${num2} = ?`;
+  questionEl.textContent = `${num1} + ${num2} = __`;
   answerInput.value = "";
   answerInput.focus();
   feedback.textContent = "";
