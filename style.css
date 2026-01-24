@@ -59,7 +59,7 @@ button:hover {
 }
 
 /*Style score in game html */
-#timer {
+#score {
   position: fixed;
   bottom: 20px;
   right: 20px;
