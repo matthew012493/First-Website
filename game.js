@@ -47,12 +47,15 @@ function endGame() {
 function startTimer() {
     timerInterval = setInterval(() => {
     timerEl.textContent = `Time: ${timeLeft}`;
-    timeLeft--;
 
-    if (timeLeft < 0) {
+    if (timeLeft <= 0) {
       clearInterval(timerInterval);
       endGame();
+      return;
     }
+
+    timeLeft--;
+      
   }, 1000);
 }
 
