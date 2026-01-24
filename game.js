@@ -34,11 +34,12 @@ function endGame() {
   clearInterval(timerInterval); 
   
   questionEl.textContent = "⏰ Time's up!";
-  feedback.textContent = "Final Score: ${score}";
+  feedback.textContent = 'Final Score: ${score}';
   feedback.style.color = "black"
   
   answerInput.style.display = "none";
   submitBtn.style.display = "none";
+  scoreEl.stle.display = "none";
   restartBtn.style.display = "inline-block";
 }
 
@@ -81,6 +82,7 @@ restartBtn.addEventListener("click", () => {
   score = 0;
 
   scoreEl.textContent = "Score: 0";
+  scoreEl.style.display = "block";
   timerEl.textContent = "Time: 60";
 
   answerInput.style.display = "inline-block";
