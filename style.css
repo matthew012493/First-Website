@@ -69,3 +69,25 @@ button:hover {
   color: green;
 }
 
+// Styles the difficulty container itself
+#difficultyContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 16px;
+  background: rgba(255,255,255,0.85);
+  padding: 6px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+// Styles the options for the difficulty container select
+#difficultyContainer select {
+  font-size: 14px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}
+
+
