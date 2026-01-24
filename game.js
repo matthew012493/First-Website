@@ -43,6 +43,24 @@ function endGame() {
   restartBtn.style.display = "inline-block";
 }
 
+// Sound effect for correct answers
+function playDing() {
+  const audioCtx = new(window.AudioContext || window.webkitAudioContext)();
+  const oscillator = audioCtx.createOscillator();
+  const gainNode = audioCtx.createGain();
+
+  oscillator.type = "sine";        // sine wave
+  oscillator.frequency.setValueAtTime(1000, audioCtx.currentTime); // 800 Hz
+  gainNode.gain.setValueAtTime(0.25, audioCtx.currentTime);        // volume
+
+  oscillator.connect(gainNode);
+  gainNode.connect(audioCtx.destination);
+
+  oscillator.start();
+  oscillator.stop(audioCtx.currentTime + 0.1); // play for 0.1 sec
+}
+
+
 // Timer function
 function startTimer() {
     timerInterval = setInterval(() => {
@@ -64,6 +82,7 @@ submitBtn.addEventListener("click", () => {
   if (answerInput.value.trim() === correctAnswer.toString()) {
     score++; // Updates score if correct
     scoreEl.textContent = `Score: ${score}`;
+    playDing(); // Sound for correct answers
     newQuestion(); // immediately go to next question
     
   } else {
