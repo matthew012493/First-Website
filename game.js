@@ -36,8 +36,8 @@ function newQuestion() {
       maxNumber = 9;
   }
   
-  num1 = randomNumber(1, 10);
-  num2 = randomNumber(1, 10);
+  num1 = randomNumber(1, maxNumber);
+  num2 = randomNumber(1, maxNumber);
   correctAnswer = num1 + num2;
 
   questionEl.textContent = `${num1} + ${num2} = __`;
