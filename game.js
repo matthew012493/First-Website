@@ -34,18 +34,18 @@ function endGame() {
   clearInterval(timerInterval); 
   
   questionEl.textContent = "⏰ Time's up!";
-  feedback.textContent = 'Final Score: ${score}';
+  feedback.textContent = `Final Score: ${score}`;
   feedback.style.color = "black"
   
   answerInput.style.display = "none";
   submitBtn.style.display = "none";
-  scoreEl.stle.display = "none";
+  scoreEl.style.display = "none";
   restartBtn.style.display = "inline-block";
 }
 
 // Timer function
 function startTimer() {
-  const timerInterval = setInterval(() => {
+    timerInterval = setInterval(() => {
     timerEl.textContent = `Time: ${timeLeft}`;
     timeLeft--;
 
