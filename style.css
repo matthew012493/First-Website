@@ -69,7 +69,7 @@ button:hover {
   color: green;
 }
 
-// Styles the difficulty container itself
+/*Styles the difficulty container itself */
 #difficultyContainer {
   position: fixed;
   bottom: 20px;
@@ -82,7 +82,7 @@ button:hover {
   z-index: 1000;
 }
 
-// Styles the options for the difficulty container select
+/*Styles the options for the difficulty container select */
 #difficultyContainer select {
   font-size: 14px;
   padding: 2px 6px;
