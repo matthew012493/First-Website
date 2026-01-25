@@ -10,6 +10,7 @@ const answerInput = document.getElementById("answer");
 const submitBtn = document.getElementById("submit");
 const feedback = document.getElementById("feedback");
 const restartBtn = document.getElementById("restart");
+const homeBtn = document.getElementById("homeBtn"); 
 
 let num1, num2, correctAnswer;
 
@@ -58,6 +59,7 @@ function endGame() {
   submitBtn.style.display = "none";
   scoreEl.style.display = "none";
   restartBtn.style.display = "inline-block";
+  homeBtn.style.display = "inline-block";
 }
 
 // Sound effect for correct answers
@@ -127,9 +129,15 @@ restartBtn.addEventListener("click", () => {
   answerInput.style.display = "inline-block";
   submitBtn.style.display = "inline-block";
   restartBtn.style.display = "none";
+  homeBtn.style.display = "none"; 
 
   newQuestion();
   startTimer();
+});
+
+// Back to main page event
+homeBtn.addEventListener("click", () => {
+  location.href = "index.html";
 });
 
 // Start the game
