@@ -72,7 +72,7 @@ button:hover {
 /*Styles the difficulty container itself */
 #difficultyContainer {
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   right: 20px;
   font-size: 16px;
   background: rgba(255,255,255,0.85);
@@ -93,8 +93,8 @@ button:hover {
 /*Return to home button */
 #endControls {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  bottom: 20px;
+  right: 20px;
   z-index: 1000;
   color: grey;
 }
