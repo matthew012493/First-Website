@@ -64,21 +64,33 @@ function endGame() {
 
 // Sound effect for correct answers
 function playDing() {
-  const audioCtx = new(window.AudioContext || window.webkitAudioContext)();
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   const oscillator = audioCtx.createOscillator();
   const gainNode = audioCtx.createGain();
 
-  oscillator.type = "sine";        // sine wave
-  oscillator.frequency.setValueAtTime(1000, audioCtx.currentTime); // 800 Hz
-  gainNode.gain.setValueAtTime(0.25, audioCtx.currentTime);        // volume
+  oscillator.type = "triangle"; // softer & sparkly
+  oscillator.frequency.setValueAtTime(1400, audioCtx.currentTime);
+  oscillator.frequency.exponentialRampToValueAtTime(
+    900,
+    audioCtx.currentTime + 0.12
+  );
+
+  gainNode.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+  gainNode.gain.exponentialRampToValueAtTime(
+    0.25,
+    audioCtx.currentTime + 0.02
+  );
+  gainNode.gain.exponentialRampToValueAtTime(
+    0.0001,
+    audioCtx.currentTime + 0.15
+  );
 
   oscillator.connect(gainNode);
   gainNode.connect(audioCtx.destination);
 
   oscillator.start();
-  oscillator.stop(audioCtx.currentTime + 0.1); // play for 0.1 sec
+  oscillator.stop(audioCtx.currentTime + 0.16);
 }
-
 
 // Timer function
 function startTimer() {
