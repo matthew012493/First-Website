@@ -90,4 +90,21 @@ button:hover {
   border: 1px solid #aaa;
 }
 
+/*Return to home button */
+#endControls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#endControls button {
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+
 
