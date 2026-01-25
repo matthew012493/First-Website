@@ -107,5 +107,24 @@ button:hover {
   cursor: pointer;
 }
 
+/*Math toggle */
+#operationContainer {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 16px;
+  background: rgba(255,255,255,0.85);
+  padding: 6px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
 
+#operationContainer label {
+  margin-left: 6px;
+  cursor: pointer;
+}
 
+#operationContainer input[type="checkbox"] {
+  margin-right: 2px;
+}
